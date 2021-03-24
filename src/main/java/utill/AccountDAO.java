@@ -36,4 +36,22 @@ public class AccountDAO {
 		return vo;
 	}// select one
 
+	public int insert(AccountVO vo) {
+		sql = "insert into account values(?,?,?,?,?,?,?)";
+		try {
+			pst = cn.prepareStatement(sql);
+			pst.setString(1, vo.getId());
+			pst.setString(2, vo.getPassword());
+			pst.setString(3, vo.getName());
+			pst.setString(4, vo.getBirthday());
+			pst.setString(5, vo.getEmail());
+			pst.setString(6, vo.getSex());
+			pst.setString(7, vo.getAddress());
+			return pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+
 }

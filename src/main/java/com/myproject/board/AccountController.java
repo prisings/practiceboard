@@ -12,42 +12,62 @@ import vo.AccountVO;
 
 @Controller
 public class AccountController {
-	
+
 	@Autowired
 	AccountService service;
-	
+
+	@RequestMapping(value = "/ajoinp")
+	public ModelAndView ajoinp(ModelAndView mv) {
+		mv.setViewName("account/join");
+		return mv;
+	}
+
+	@RequestMapping(value = "/ajoin")
+	public ModelAndView ajoin(HttpServletRequest request, ModelAndView mv, AccountVO vo) {
+		System.out.println(vo.toString());
+		if (service.insert(vo) > 0) {
+			// 가입성공 -> 로그인 유도 메시지 출력 : loginForm.jsp
+			mv.addObject("message", " 회원 가입 성공 !!! 로그인 후 이용하세요 ~~");
+			mv.setViewName("account/alogin");
+		} else {
+			// 가입실패 -> 재가입 유도 메시지 출력 : joinForm.jsp
+			mv.addObject("message", " 회원 가입 실패 !!! 다시 하세요 ~~");
+			mv.setViewName("account/join");
+		}
+
+		return mv;
+	}
+
 	@RequestMapping(value = "/aloginp")
 	public ModelAndView aloginp(ModelAndView mv) {
 		mv.setViewName("account/alogin");
 		return mv;
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/alogin")
 	public ModelAndView alogin(HttpServletRequest request, ModelAndView mv, AccountVO vo) {
-		
+
 		String password = vo.getPassword();
 		vo = service.selectOne(vo);
-		if ( vo != null) { // ID Ok
+		if (vo != null) { // ID Ok
 			if (vo.getPassword().equals(password)) {
 				// Login 성공 -> session 보관, home
 				request.getSession().setAttribute("loginID", vo.getId());
 				mv.addObject("message", "로그인 성공");
 				System.out.println("성공");
-				 mv.setViewName("redirect:home"); 
-			}else {
+				mv.setViewName("redirect:home");
+			} else {
 				// Password 오류
 				mv.addObject("message", "~~ Password 오류 !! 다시 하세요 ~~");
 				System.out.println("pw 실패");
 				mv.setViewName("account/alogin");
 			}
-		}else { // ID 오류
+		} else { // ID 오류
 			mv.addObject("message", "~~ ID 오류 !! 다시 하세요 ~~");
 			System.out.println("id 실패");
 			mv.setViewName("account/alogin");
 		}
 		return mv;
 	}
-	
+
 }

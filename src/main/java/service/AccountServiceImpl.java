@@ -18,4 +18,9 @@ public class AccountServiceImpl implements AccountService{
 		return dao.selectOne(vo);
 	}
 
+	@Override
+	public int insert(AccountVO vo) {
+		return dao.insert(vo);
+	}
+
 }

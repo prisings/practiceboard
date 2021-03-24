@@ -16,5 +16,6 @@
 		${message}
 </c:if>
 <a href="aloginp">alogin</a>
+<a href="ajoinp">ajoin</a>
 </body>
 </html>
