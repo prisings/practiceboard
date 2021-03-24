@@ -15,13 +15,14 @@ Spring게시판 만들기 연습 단계별(sql crud 사용 연습 포함) 로그
 { 회 원 가 입 }
 홈.jsp에서 회원가입 페이지로 이동
 <br>
-회원가입시 입력해야할 사항 : id password name email sex(checkbox) birthday address phone
+회원가입시 입력해야할 사항 : id password name email sex(checkbox) birthday address 
 <br>
 account table 현재 컬럼 id & password
 <br>
-account table 추가 컬럼 name email sex birthday address phone (update문 사용 연습)
+account table 추가 컬럼 name email sex birthday address  (alter table문 사용 연습)
 <br>
 회원가입시 무결성 검사추가
 <br>
-회원가입 테스트 -> 성공 ? 실패 ?
+회원가입 테스트 -> 성공 실패 
+
 
