@@ -16,6 +16,24 @@ public class AccountController {
 	@Autowired
 	AccountService service;
 
+	@RequestMapping(value = "/idCheck")
+	public ModelAndView idCheck(ModelAndView mv, AccountVO vo) {
+		// ** 전달된 ID 가 존재하는지 확인
+		// => notNull : 존재 -> 사용불가
+		// => Null : 없음 -> 사용가능
+		// => 그러므로 전달된 ID 보관 해야함
+		mv.addObject("newID", vo.getId());
+		if (service.selectOne(vo) != null) {
+			mv.addObject("idUse", "F"); //사용불가
+		}else {
+			mv.addObject("idUse", "T"); //사용가능
+		}
+		mv.setViewName("account/idDupCheck");
+		return mv;
+		
+	}
+	
+	
 	@RequestMapping(value = "/ajoinp")
 	public ModelAndView ajoinp(ModelAndView mv) {
 		mv.setViewName("account/join");

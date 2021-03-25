@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script src="resources/mylib/jquery-3.2.1.min.js"></script>
 <script src="resources/mylib/incheck.js"></script>
+
 <script>
 
 	var iCheck = false;
@@ -91,6 +92,18 @@
 			return false; // submit 무효화 
 		}
 	} //inCheck
+	
+	function idDupCheck() {
+		if (iCheck==false) {
+			iCheck=idCheck();
+		}else {
+			var url="idCheck?id="+$('#id').val();
+			window.open(url,"_blank",
+				"toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,width=500,height=400");
+		}
+	} //idDupCheck
+	
+	
 </script>
 </head>
 <body>
@@ -98,8 +111,9 @@
 		<table>
 			<tr height="40">
 				<td bgcolor="pink">I D</td>
-				<td><input type="text" name="id" id="id" size="10"> <br>
-					<span id=iMessage class="message"></span></td>
+				<td><input type="text" name="id" id="id" size="10"> &nbsp; &nbsp;
+				 <input type="button" value="ID중복확인" id="idDup" onclick="idDupCheck()">
+				 <br><span id=iMessage class="message"></span></td>
 			</tr>
 			<tr height="40">
 				<td bgcolor="pink">Password</td>
@@ -142,7 +156,7 @@
 			<tr height="40">
 				<td></td>
 				<td>
-					<input type="submit" id="submit" value="전송" 
+					<input type="submit" id="submit" value="전송" disabled
 					onclick="return inCheck()"> <input type="reset" value="취소">&nbsp;&nbsp;
 				</td>
 			</tr>
