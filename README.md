@@ -25,6 +25,7 @@ account table 추가 컬럼 name email sex birthday address  (alter table문 사
 <br>
 회원가입 테스트 -> 성공 실패 
 <br>
+<br>
 3월 25일
 회원가입시 아이디 중복체크
 <br>
