@@ -37,6 +37,6 @@ account table 추가 컬럼 name email sex birthday address  (alter table문 사
 <br>
 중복이 있을경우 회원가입이 불가능
 <br>
-중복테스트 성공 실패  ?
+중복테스트 성공 실패  
 
 
