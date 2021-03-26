@@ -46,5 +46,5 @@ account table 추가 컬럼 name email sex birthday address  (alter table문 사
 <br>
 리스트 페이지 작성
 <br>
-리스트 출력 확인
+리스트 출력 확인 
 
