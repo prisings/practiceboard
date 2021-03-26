@@ -37,6 +37,14 @@ account table 추가 컬럼 name email sex birthday address  (alter table문 사
 <br>
 중복이 있을경우 회원가입이 불가능
 <br>
-중복테스트 성공 실패  ?
-
+중복테스트 성공 실패  
+<br>
+<br>
+3월 26일
+<br>
+회원 리스트 출력
+<br>
+리스트 페이지 작성
+<br>
+리스트 출력 확인
 
