@@ -1,6 +1,8 @@
 package service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,11 @@ public class AccountServiceImpl implements AccountService{
 	@Override
 	public int insert(AccountVO vo) {
 		return dao.insert(vo);
+	}
+
+	@Override
+	public List<AccountVO> selectList() {
+		return dao.selectList();
 	}
 
 }

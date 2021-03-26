@@ -1,5 +1,7 @@
 package com.myproject.board;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,5 +89,20 @@ public class AccountController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping(value = "/alist")
+	public ModelAndView alist(HttpServletRequest request, ModelAndView mv, AccountVO vo) {
+		
+		List<AccountVO> list = service.selectList();
+		if ( list != null) {
+			mv.addObject("list", list);
+		}else {
+			mv.addObject("message","~~ 출력자료가 1건도 없습니다 ~~");
+		}
+		mv.setViewName("account/alist"); // forward
+		return mv;
+		
+		
+	}	
 
 }
