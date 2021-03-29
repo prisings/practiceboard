@@ -47,4 +47,8 @@ account table 추가 컬럼 name email sex birthday address  (alter table문 사
 리스트 페이지 작성
 <br>
 리스트 출력 확인 
-
+<br>
+3월 39일
+<br>
+회원가입 전 이용약관 동의 페이지 작성
+<br>
