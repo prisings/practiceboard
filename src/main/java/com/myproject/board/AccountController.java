@@ -35,6 +35,15 @@ public class AccountController {
 		
 	}
 	
+	@RequestMapping(value = "/checkterm")
+	public ModelAndView checkterm(ModelAndView mv) {
+		mv.setViewName("account/checkterm");
+		return mv;
+	}
+	
+	
+	
+	
 	
 	@RequestMapping(value = "/ajoinp")
 	public ModelAndView ajoinp(ModelAndView mv) {

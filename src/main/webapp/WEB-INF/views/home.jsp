@@ -16,6 +16,7 @@
 		${message}
 </c:if>
 <a href="aloginp">alogin</a>
+<a href="checkterm">join</a>
 <a href="ajoinp">ajoin</a>
 <a href="alist">alist</a>
 </body>
