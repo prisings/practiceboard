@@ -113,5 +113,18 @@ public class AccountController {
 		
 		
 	}	
-
+	@RequestMapping(value = "/mdetail")
+	public ModelAndView mdetail(HttpServletRequest request, ModelAndView mv, AccountVO vo) {
+		
+		
+		if ( service.selectOne(vo) != null) {
+			mv.addObject("vo", vo);
+		}else {
+			mv.addObject("message","~~ 출력자료가 1건도 없습니다 ~~");
+		}
+		mv.setViewName("account/mdetail"); // forward
+		return mv;
+		
+		
+	}	
 }
