@@ -62,3 +62,5 @@ account table 추가 컬럼 name email sex birthday address  (alter table문 사
 수정 삭제는 나중에 추가예정 (우선 글씨만)
 <br>
 완료.
+<br>
+3월 31일 정보처리기사 실기 시험과 팀 프로젝트로 인한 
